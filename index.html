@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB Interactive Background</title>
+    <title>ArtificialGorillas</title>
     <style>
         body, html {
             margin: 0;
@@ -15,6 +15,7 @@
             align-items: center;
             justify-content: center;
             color: white;
+            text-align: center;
         }
 
         .rgb-background {
@@ -25,7 +26,7 @@
             height: 100%;
             background: linear-gradient(45deg, red, yellow, green, cyan, blue, magenta, red);
             background-size: 400% 400%;
-            animation: gradient 5s infinite;
+            animation: gradient 8s infinite;
         }
 
         @keyframes gradient {
@@ -34,56 +35,48 @@
             100% { background-position: 0% 50%; }
         }
 
-        .controls {
+        .content {
             position: relative;
             z-index: 1;
-            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 600px;
         }
 
-        .controls input[type=range] {
-            width: 200px;
+        h1 {
+            font-size: 3em;
+            margin: 0.5em 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
         }
 
         .button {
+            display: inline-block;
             padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
+            background: rgba(255, 255, 255, 0.3);
             color: white;
-            margin: 10px;
-            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
             transition: background 0.3s;
         }
 
         .button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
     <div class="rgb-background"></div>
-    <div class="controls">
-        <h1>RGB Background Customizer</h1>
-        <label>Transition Speed</label><br>
-        <input type="range" id="speed" min="1" max="10" value="5">
-        <button class="button" id="toggleAnimation">Pause</button>
+    <div class="content">
+        <h1>ArtificialGorillas</h1>
+        <p>Welcome to ArtificialGorillas, a collective of innovative coders pushing the limits of creativity in VR, game development, and automation.</p>
+        <p>Our mission is to build unique, immersive experiences and open-source tools for the coding community.</p>
+        <a href="#" class="button">Learn More</a>
     </div>
-
-    <script>
-        const speedControl = document.getElementById('speed');
-        const toggleAnimationButton = document.getElementById('toggleAnimation');
-        const background = document.querySelector('.rgb-background');
-        let animationPlaying = true;
-
-        speedControl.addEventListener('input', (e) => {
-            background.style.animationDuration = `${11 - e.target.value}s`;
-        });
-
-        toggleAnimationButton.addEventListener('click', () => {
-            animationPlaying = !animationPlaying;
-            background.style.animationPlayState = animationPlaying ? 'running' : 'paused';
-            toggleAnimationButton.textContent = animationPlaying ? 'Pause' : 'Play';
-        });
-    </script>
 </body>
 </html>
