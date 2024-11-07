@@ -26,7 +26,7 @@
             height: 100%;
             background: linear-gradient(45deg, red, yellow, green, cyan, blue, magenta, red);
             background-size: 400% 400%;
-            animation: gradient 8s infinite;
+            animation: gradient 15s infinite;
         }
 
         @keyframes gradient {
@@ -42,31 +42,37 @@
             background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             max-width: 600px;
+            transition: transform 0.3s ease;
+        }
+
+        .content:hover {
+            transform: scale(1.05) translateZ(10px);
         }
 
         h1 {
             font-size: 3em;
             margin: 0.5em 0;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
         }
 
         p {
             font-size: 1.2em;
             margin: 0.5em 0;
+            transition: transform 0.3s ease;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
+        p:hover {
+            transform: scale(1.05);
         }
 
-        .button:hover {
-            background: rgba(255, 255, 255, 0.6);
+        .details {
+            margin-top: 20px;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
@@ -75,8 +81,9 @@
     <div class="content">
         <h1>ArtificialGorillas</h1>
         <p>Welcome to ArtificialGorillas, a collective of innovative coders pushing the limits of creativity in VR, game development, and automation.</p>
-        <p>Our mission is to build unique, immersive experiences and open-source tools for the coding community.</p>
-        <a href="#" class="button">Learn More</a>
+        <div class="details">
+            <p>Our mission is to build unique, immersive experiences and open-source tools for the coding community. From creating VR mods to developing cutting-edge tools, we strive to make technology accessible, engaging, and impactful.</p>
+        </div>
     </div>
 </body>
 </html>
